@@ -895,28 +895,28 @@ body{
   max-width: 380px;
 }
 
-.ud-max-w-\[600px\]{
-  max-width: 600px;
+.ud-max-w-\[570px\]{
+  max-width: 570px;
 }
 
-.ud-max-w-\[750px\]{
-  max-width: 750px;
+.ud-max-w-\[600px\]{
+  max-width: 600px;
 }
 
 .ud-max-w-\[300px\]{
   max-width: 300px;
 }
 
-.ud-max-w-\[480px\]{
-  max-width: 480px;
+.ud-max-w-\[500px\]{
+  max-width: 500px;
+}
+
+.ud-max-w-\[450px\]{
+  max-width: 450px;
 }
 
 .ud-max-w-\[420px\]{
   max-width: 420px;
-}
-
-.ud-max-w-\[500px\]{
-  max-width: 500px;
 }
 
 .ud-max-w-\[200px\]{
@@ -925,14 +925,6 @@ body{
 
 .ud-max-w-\[780px\]{
   max-width: 780px;
-}
-
-.ud-max-w-\[570px\]{
-  max-width: 570px;
-}
-
-.ud-max-w-\[450px\]{
-  max-width: 450px;
 }
 
 .ud--translate-y-1\/2{
@@ -2140,13 +2132,13 @@ html{
     line-height: 1.5rem;
   }
 
-  .sm\:ud-text-\[38px\]{
-    font-size: 38px;
-  }
-
   .sm\:ud-text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .sm\:ud-text-\[38px\]{
+    font-size: 38px;
   }
 
   .sm\:ud-leading-\[50px\]{
@@ -2695,10 +2687,6 @@ html{
 
   .xl\:ud-max-w-\[350px\]{
     max-width: 350px;
-  }
-
-  .xl\:ud-max-w-\[620px\]{
-    max-width: 620px;
   }
 
   .xl\:ud-px-20{
