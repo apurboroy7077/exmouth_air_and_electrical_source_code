@@ -7,8 +7,8 @@
 
   const darkModeToggler = () => {
     darkTogglerCheckbox.checked
-      ? html.classList.remove("a4p")
-      : html.classList.add("a4p");
+      ? html.classList.remove("a4q")
+      : html.classList.add("a4q");
   };
   darkModeToggler();
 
@@ -43,7 +43,7 @@
 
   menuToggler.addEventListener("click", () => {
     menuWrapper.classList.toggle("show");
-    document.body.classList.toggle("a4o");
+    document.body.classList.toggle("a4p");
     menuToggler.querySelector(".cross").classList.toggle("af");
     menuToggler.querySelector(".menu").classList.toggle("af");
   });
@@ -52,7 +52,7 @@
   document.querySelectorAll(".navbar li:not(.submenu-item) a").forEach((e) =>
     e.addEventListener("click", () => {
       menuWrapper.classList.toggle("show");
-      document.body.classList.toggle("a4o");
+      document.body.classList.toggle("a4p");
       menuToggler.querySelector(".cross").classList.toggle("af");
       menuToggler.querySelector(".menu").classList.toggle("af");
     })

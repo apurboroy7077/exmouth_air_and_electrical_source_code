@@ -14,4 +14,10 @@ function miniClassName() {
     .pipe(gulp.dest("build"));
 }
 
-exports.default = parallel(miniClassName);
+function minifyImages() {
+  return src(["./src/images/*", "./src/images/**/*"]).pipe(
+    gulp.dest("build/images")
+  );
+}
+
+exports.default = parallel(miniClassName, minifyImages);

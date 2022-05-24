@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply a4h;
+    @apply a4i;
   }
 }
 
@@ -12,7 +12,7 @@
 @tailwind utilities;
 
 html {
-  @apply a4i;
+  @apply a4j;
 }
 
 .header {
@@ -20,7 +20,7 @@ html {
 }
 
 .sticky {
-  @apply ai ac[9999] am a4j a33 aM dark:a0;
+  @apply ai ac[9999] am a4k a33 aM dark:a0;
   backdrop-filter: blur(5px);
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
 }
@@ -48,15 +48,23 @@ html {
 .title {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(74, 108, 247, 0.4) 0%,
+    rgba(74, 108, 247, 0) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   opacity: 0.2;
-  @apply a1 a2K/2 a2 a2L/2 a1E[40px] a4k !a1G sm:a1E[60px] lg:a1E[95px];
+  @apply a1 a2K/2 a2 a2L/2 a1E[40px] a4l !a1G sm:a1E[60px] lg:a1E[95px];
+}
+
+.dark .title {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 #supportCheckbox:checked ~ div span {
@@ -67,15 +75,15 @@ html {
   @apply aG dark:aH;
 }
 .submenu-item a.active span svg {
-  @apply a4l;
+  @apply a4m;
 }
 
 .tns-controls {
-  @apply a1 a2K/2 a4m a3e a5 a2L/2 a11 lg:a4n[70px] lg:a49;
+  @apply a1 a2K/2 a4n a3f a5 a2L/2 a11 lg:a4o[70px] lg:a4a;
 }
 
 .tns-controls button {
-  @apply a5 a2n a2o a9 al a1i a15 a39 aG hover:a3n hover:aH dark:am dark:a39 dark:aH dark:hover:a15 dark:hover:a3n dark:hover:aH;
+  @apply a5 a2n a2o a9 al a1i a15 a3a aG hover:a3o hover:aH dark:am dark:a3a dark:aH dark:hover:a15 dark:hover:a3o dark:hover:aH;
 }
 
 .grid-sizer {
@@ -83,5 +91,5 @@ html {
 }
 
 .portfolio-btn-wrapper button.active {
-  @apply a3d;
+  @apply a3e;
 }

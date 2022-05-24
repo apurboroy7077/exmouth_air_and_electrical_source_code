@@ -48,8 +48,8 @@ html {
 .title {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(74, 108, 247, 0.4) 0%,
+    rgba(74, 108, 247, 0) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -57,6 +57,14 @@ html {
   text-fill-color: transparent;
   opacity: 0.2;
   @apply ud-absolute ud-left-1/2 ud-top-0 ud--translate-x-1/2 ud-text-[40px] ud-font-extrabold !ud-leading-none sm:ud-text-[60px] lg:ud-text-[95px];
+}
+
+.dark .title {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 #supportCheckbox:checked ~ div span {

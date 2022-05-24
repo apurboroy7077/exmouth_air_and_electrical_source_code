@@ -12,6 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^10.3.7",
     "gulp": "^4.0.2",
+    "gulp-image": "^6.3.1",
     "postcss": "^8.3.9",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.10",
