@@ -7,8 +7,8 @@
 
   const darkModeToggler = () => {
     darkTogglerCheckbox.checked
-      ? html.classList.remove("a4q")
-      : html.classList.add("a4q");
+      ? html.classList.remove("a4u")
+      : html.classList.add("a4u");
   };
   darkModeToggler();
 
@@ -43,18 +43,18 @@
 
   menuToggler.addEventListener("click", () => {
     menuWrapper.classList.toggle("show");
-    document.body.classList.toggle("a4p");
-    menuToggler.querySelector(".cross").classList.toggle("af");
-    menuToggler.querySelector(".menu").classList.toggle("af");
+    document.body.classList.toggle("a4r");
+    menuToggler.querySelector(".cross").classList.toggle("ag");
+    menuToggler.querySelector(".menu").classList.toggle("ag");
   });
 
   //===== close navbar-collapse when a  clicked
   document.querySelectorAll(".navbar li:not(.submenu-item) a").forEach((e) =>
     e.addEventListener("click", () => {
       menuWrapper.classList.toggle("show");
-      document.body.classList.toggle("a4p");
-      menuToggler.querySelector(".cross").classList.toggle("af");
-      menuToggler.querySelector(".menu").classList.toggle("af");
+      document.body.classList.toggle("a4r");
+      menuToggler.querySelector(".cross").classList.toggle("ag");
+      menuToggler.querySelector(".menu").classList.toggle("ag");
     })
   );
 
@@ -63,7 +63,7 @@
   submenuItems.forEach((el) => {
     el.querySelector("a").addEventListener("click", () => {
       el.querySelector("a").classList.toggle("active");
-      el.querySelector(".submenu").classList.toggle("af");
+      el.querySelector(".submenu").classList.toggle("ag");
     });
   });
 

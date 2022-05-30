@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply a4i;
+    @apply a4k;
   }
 }
 
@@ -12,33 +12,33 @@
 @tailwind utilities;
 
 html {
-  @apply a4j;
+  @apply a4l;
 }
 
 .header {
-  @apply a2d;
+  @apply a2e;
 }
 
 .sticky {
-  @apply ai ac[9999] am a4k a33 aM dark:a0;
+  @apply aj ad[9999] an a4m a34 aN dark:a0;
   backdrop-filter: blur(5px);
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .navbar > li > a {
-  @apply lg:a2e;
+  @apply lg:a2f;
 }
 
 .sticky .navbar > li > a {
-  @apply lg:a2d;
+  @apply lg:a2e;
 }
 
 .menu-scroll.active {
-  @apply aG;
+  @apply aH;
 }
 
 .menu-wrapper {
-  @apply af;
+  @apply ag;
 }
 
 .menu-wrapper.show {
@@ -56,7 +56,7 @@ html {
   background-clip: text;
   text-fill-color: transparent;
   opacity: 0.2;
-  @apply a1 a2K/2 a2 a2L/2 a1E[40px] a4l !a1G sm:a1E[60px] lg:a1E[95px];
+  @apply a1 a2L/2 a2 a2M/2 a1F[40px] a4n !a1H sm:a1F[60px] lg:a1F[95px];
 }
 
 .dark .title {
@@ -68,28 +68,28 @@ html {
 }
 
 #supportCheckbox:checked ~ div span {
-  @apply au;
+  @apply av;
 }
 
 .submenu-item a.active {
-  @apply aG dark:aH;
+  @apply aH dark:aI;
 }
 .submenu-item a.active span svg {
-  @apply a4m;
+  @apply a4o;
 }
 
 .tns-controls {
-  @apply a1 a2K/2 a4n a3f a5 a2L/2 a11 lg:a4o[70px] lg:a4a;
+  @apply a1 a2L/2 a4p a3h a5 a2M/2 a12 lg:a4q[70px] lg:a4c;
 }
 
 .tns-controls button {
-  @apply a5 a2n a2o a9 al a1i a15 a3a aG hover:a3o hover:aH dark:am dark:a3a dark:aH dark:hover:a15 dark:hover:a3o dark:hover:aH;
+  @apply a5 a2o a2p a9 am a1j a16 a3c aH hover:a3r hover:aI dark:an dark:a3c dark:aI dark:hover:a16 dark:hover:a3r dark:hover:aI;
 }
 
 .grid-sizer {
-  @apply a4 md:a1R/2 lg:a1R/3;
+  @apply a4 md:a1S/2 lg:a1S/3;
 }
 
 .portfolio-btn-wrapper button.active {
-  @apply a3e;
+  @apply a3g;
 }
