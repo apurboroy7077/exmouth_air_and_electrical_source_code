@@ -7,8 +7,8 @@
 
   const darkModeToggler = () => {
     darkTogglerCheckbox.checked
-      ? html.classList.remove("a4u")
-      : html.classList.add("a4u");
+      ? html.classList.remove("a4s")
+      : html.classList.add("a4s");
   };
   darkModeToggler();
 
