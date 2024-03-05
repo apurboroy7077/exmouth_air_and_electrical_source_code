@@ -10,15 +10,7 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
-    colors: {
-      current: "currentColor",
-      transparent: "transparent",
-      white: "#FFFFFF",
-      primary: "#4A6CF7",
-      "dark-text": "#79808A",
-      dark: "#111722",
-      stroke: "#e5e7eb",
-    },
+
     screens: {
       sm: "540px",
       // => @media (min-width: 576px) { ... }
@@ -38,6 +30,15 @@ module.exports = {
     extend: {
       screens: {
         xs: "500px",
+      },
+      colors: {
+        current: "currentColor",
+        transparent: "transparent",
+        white: "#FFFFFF",
+        primary: "#4A6CF7",
+        "dark-text": "#79808A",
+        dark: "#111722",
+        stroke: "#e5e7eb",
       },
       backgroundImage: {
         "noise-pattern": "url('../images/NoisePattern.svg')",
