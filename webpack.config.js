@@ -21,7 +21,7 @@ const processNestedHtml = (content, loaderContext, dir = null) =>
 // HTML generation
 const paths = [];
 const generateHTMLPlugins = () =>
-  glob.sync("./src-prefix/*.html").map((dir) => {
+  glob.sync("./src/*.html").map((dir) => {
     const filename = path.basename(dir);
 
     if (filename !== "404.html") {
@@ -30,15 +30,15 @@ const generateHTMLPlugins = () =>
 
     return new HtmlWebpackPlugin({
       filename,
-      template: `./src-prefix/${filename}`,
-      favicon: `./src-prefix/images/favicon.ico`,
+      template: `./src/${filename}`,
+      favicon: `./src/images/favicon.ico`,
       inject: "body",
     });
   });
 
 module.exports = {
   mode: "development",
-  entry: "./src-prefix/js/index.js",
+  entry: "./src/js/index.js",
   devServer: {
     static: {
       directory: path.join(__dirname, "./build"),
