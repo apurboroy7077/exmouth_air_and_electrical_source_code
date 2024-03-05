@@ -1,11 +1,11 @@
-import '../../node_modules/tiny-slider/dist/tiny-slider.css';
-import '../css/animate.css';
-import '../css/style.css';
+import "../../node_modules/tiny-slider/dist/tiny-slider.css";
+import "../css/animate.css";
+import "../css/style.css";
 
-import '../js/typewriter';
-import { tns } from 'tiny-slider';
-import Isotope from 'isotope-layout';
-import WOW from 'wowjs';
+import "../js/typewriter";
+import { tns } from "tiny-slider";
+import Isotope from "isotope-layout";
+import WOW from "wowjs";
 
 window.wow = new WOW.WOW({
   live: false,
@@ -16,13 +16,13 @@ window.wow.init({
 });
 
 //========= testimonial
-const testimonial = document.querySelectorAll('.testimonial-active');
+const testimonial = document.querySelectorAll(".testimonial-active");
 
-if(testimonial.length) {
+if (testimonial.length) {
   tns({
-    container: '.testimonial-active',
+    container: ".testimonial-active",
     items: 1,
-    slideBy: 'page',
+    slideBy: "page",
     autoplay: false,
     mouseDrag: true,
     gutter: 0,
@@ -56,99 +56,102 @@ if(testimonial.length) {
 
 //============== isotope masonry js
 
-const elem = document.querySelector('.portfolio-grid');
+const elem = document.querySelector(".portfolio-grid");
 
 const iso = new Isotope(elem, {
   // options
-  itemSelector: '.grid-item',
+  itemSelector: ".grid-item",
   masonry: {
     // use outer width of grid-sizer for columnWidth
-    columnWidth: '.grid-sizer',
+    columnWidth: ".grid-sizer",
   },
 });
 
-const filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+const filterButtons = document.querySelectorAll(
+  ".portfolio-btn-wrapper button",
+);
 filterButtons.forEach((e) =>
-  e.addEventListener('click', () => {
-    const filterValue = event.target.getAttribute('data-filter');
+  e.addEventListener("click", () => {
+    const filterValue = event.target.getAttribute("data-filter");
     iso.arrange({
       filter: filterValue,
     });
-  })
+  }),
 );
 
 //======= portfolio-btn active
-const elements = document.querySelectorAll('.portfolio-btn-wrapper button');
+const elements = document.querySelectorAll(".portfolio-btn-wrapper button");
 for (let i = 0; i < elements.length; i++) {
   elements[i].onclick = function () {
     // remove class from sibling
 
     let el = elements[0];
     while (el) {
-      if (el.tagName === 'BUTTON') {
+      if (el.tagName === "BUTTON") {
         //remove class
-        el.classList.remove('active');
+        el.classList.remove("active");
       }
       // pass to the new sibling
       el = el.nextSibling;
     }
 
-    this.classList.add('active');
+    this.classList.add("active");
   };
 }
 
-
-
 (function () {
-  'use strict';
+  "use strict";
 
   // ======= Sticky
   window.onscroll = function () {
-    const ud_header = document.querySelector('.header');
+    const ud_header = document.querySelector(".header");
     const sticky = ud_header.offsetTop;
 
     if (window.pageYOffset > sticky) {
-      ud_header.classList.add('sticky');
+      ud_header.classList.add("sticky");
     } else {
-      ud_header.classList.remove('sticky');
+      ud_header.classList.remove("sticky");
     }
 
     // show or hide the back-top-top button
-    const backToTop = document.querySelector('.back-to-top');
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      backToTop.style.display = 'flex';
+    const backToTop = document.querySelector(".back-to-top");
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      backToTop.style.display = "flex";
     } else {
-      backToTop.style.display = 'none';
+      backToTop.style.display = "none";
     }
   };
 
   // Mobile Menu
-  const menuToggler = document.querySelector('.menu-toggler');
-  const menuWrapper = document.querySelector('.menu-wrapper');
+  const menuToggler = document.querySelector(".menu-toggler");
+  const menuWrapper = document.querySelector(".menu-wrapper");
 
-  menuToggler.addEventListener('click', () => {
-    menuWrapper.classList.toggle('show');
-    document.body.classList.toggle('ud-overflow-y-hidden');
-    menuToggler.querySelector('.cross').classList.toggle('ud-hidden');
-    menuToggler.querySelector('.menu').classList.toggle('ud-hidden');
+  menuToggler.addEventListener("click", () => {
+    menuWrapper.classList.toggle("show");
+    document.body.classList.toggle("ud-overflow-y-hidden");
+    menuToggler.querySelector(".cross").classList.toggle("ud-hidden");
+    menuToggler.querySelector(".menu").classList.toggle("ud-hidden");
   });
 
   //===== close navbar-collapse when a  clicked
-  document.querySelectorAll('.navbar li:not(.submenu-item) a').forEach((e) =>
-    e.addEventListener('click', () => {
-      menuWrapper.classList.toggle('show');
-      document.body.classList.toggle('ud-overflow-y-hidden');
-      menuToggler.querySelector('.cross').classList.toggle('ud-hidden');
-      menuToggler.querySelector('.menu').classList.toggle('ud-hidden');
-    })
+  document.querySelectorAll(".navbar li:not(.submenu-item) a").forEach((e) =>
+    e.addEventListener("click", () => {
+      menuWrapper.classList.toggle("show");
+      document.body.classList.toggle("ud-overflow-y-hidden");
+      menuToggler.querySelector(".cross").classList.toggle("ud-hidden");
+      menuToggler.querySelector(".menu").classList.toggle("ud-hidden");
+    }),
   );
 
   // ===== Sub-menu
-  const submenuItems = document.querySelectorAll('.submenu-item');
+  const submenuItems = document.querySelectorAll(".submenu-item");
   submenuItems.forEach((el) => {
-    el.querySelector('a').addEventListener('click', () => {
-      el.querySelector('a').classList.toggle('active');
-      el.querySelector('.submenu').classList.toggle('ud-hidden');
+    el.querySelector("a").addEventListener("click", () => {
+      el.querySelector("a").classList.toggle("active");
+      el.querySelector(".submenu").classList.toggle("ud-hidden");
     });
   });
 
@@ -181,21 +184,23 @@ for (let i = 0; i < elements.length; i++) {
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
 
-  document.querySelector('.back-to-top').onclick = () => {
+  document.querySelector(".back-to-top").onclick = () => {
     scrollTo(document.documentElement);
   };
 })();
 
 // Document Loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // ==== darkToggler
-  const darkTogglerCheckbox = document.querySelector('#darkToggler');
-  const html = document.querySelector('html');
+  const darkTogglerCheckbox = document.querySelector("#darkToggler");
+  const html = document.querySelector("html");
 
   const darkModeToggler = () => {
-    darkTogglerCheckbox.checked ? html.classList.remove('ud-dark') : html.classList.add('ud-dark');
+    darkTogglerCheckbox.checked
+      ? html.classList.remove("ud-dark")
+      : html.classList.add("ud-dark");
   };
   darkModeToggler();
 
-  darkTogglerCheckbox.addEventListener('click', darkModeToggler);
+  darkTogglerCheckbox.addEventListener("click", darkModeToggler);
 });

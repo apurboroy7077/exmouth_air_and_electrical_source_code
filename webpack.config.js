@@ -1,7 +1,8 @@
-const path = require('path');
-const glob = require('glob');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const glob = require("glob");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin");
 
 const INCLUDE_PATTERN = /<include src="(.+)"\s*\/?>(?:<\/include>)?/gi;
 const processNestedHtml = (content, loaderContext, dir = null) =>
@@ -11,35 +12,36 @@ const processNestedHtml = (content, loaderContext, dir = null) =>
         const filePath = path.resolve(dir || loaderContext.context, src);
         loaderContext.dependency(filePath);
         return processNestedHtml(
-          loaderContext.fs.readFileSync(filePath, 'utf8'),
+          loaderContext.fs.readFileSync(filePath, "utf8"),
           loaderContext,
-          path.dirname(filePath)
+          path.dirname(filePath),
         );
       });
 
 // HTML generation
 const paths = [];
-const generateHTMLPlugins = () => glob.sync('./src/*.html').map((dir) => {
-  const filename = path.basename(dir);
+const generateHTMLPlugins = () =>
+  glob.sync("./src-prefix/*.html").map((dir) => {
+    const filename = path.basename(dir);
 
-  if (filename !== '404.html') {
-    paths.push(filename);
-  }
+    if (filename !== "404.html") {
+      paths.push(filename);
+    }
 
-  return new HtmlWebpackPlugin({
-    filename,
-    template: `./src/${filename}`,
-    favicon: `./src/images/favicon.ico`,
-    inject: 'body',
+    return new HtmlWebpackPlugin({
+      filename,
+      template: `./src-prefix/${filename}`,
+      favicon: `./src-prefix/images/favicon.ico`,
+      inject: "body",
+    });
   });
-});
 
 module.exports = {
-  mode: 'development',
-  entry: './src/js/index.js',
+  mode: "development",
+  entry: "./src-prefix/js/index.js",
   devServer: {
     static: {
-      directory: path.join(__dirname, './build'),
+      directory: path.join(__dirname, "./build"),
     },
     compress: true,
     port: 3000,
@@ -50,27 +52,27 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
           },
         },
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        loader: "html-loader",
         options: {
           preprocessor: processNestedHtml,
         },
@@ -79,15 +81,20 @@ module.exports = {
   },
   plugins: [
     ...generateHTMLPlugins(),
+    // new MangleCssClassPlugin({
+    //   classNameRegExp:
+    //     "(([a-zA-Z-:]*)[\\\\\\\\]*:)*([\\\\\\\\]*!)?ud-[a-zA-Z-]([a-zA-Z0-9-]*([\\\\\\\\]*(\\%|\\#|\\.|\\[|\\]))*)*",
+    //   log: true,
+    // }),
     new MiniCssExtractPlugin({
-      filename: 'style.css',
-      chunkFilename: 'style.css',
+      filename: "style.css",
+      chunkFilename: "style.css",
     }),
   ],
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "build"),
     clean: true,
-    assetModuleFilename: '[path][name][ext]',
+    assetModuleFilename: "[path][name][ext]",
   },
 };
