@@ -131,7 +131,7 @@ for (let i = 0; i < elements.length; i++) {
 
   menuToggler.addEventListener("click", () => {
     menuWrapper.classList.toggle("show");
-    document.body.classList.toggle("overflow-y-hidden");
+    document.body.classList.toggle("overflow-y-hidden lg:overflow-y-auto");
     menuToggler.querySelector(".cross").classList.toggle("hidden");
     menuToggler.querySelector(".menu").classList.toggle("hidden");
   });
@@ -140,7 +140,7 @@ for (let i = 0; i < elements.length; i++) {
   document.querySelectorAll(".navbar li:not(.submenu-item) a").forEach((e) =>
     e.addEventListener("click", () => {
       menuWrapper.classList.toggle("show");
-      document.body.classList.toggle("overflow-y-hidden");
+      document.body.classList.toggle("overflow-y-hidden lg:overflow-y-auto");
       menuToggler.querySelector(".cross").classList.toggle("hidden");
       menuToggler.querySelector(".menu").classList.toggle("hidden");
     }),
