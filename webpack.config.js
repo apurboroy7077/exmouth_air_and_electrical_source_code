@@ -2,7 +2,6 @@ const path = require("path");
 const glob = require("glob");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const MangleCssClassPlugin = require("mangle-css-class-webpack-plugin");
 
 const INCLUDE_PATTERN = /<include src="(.+)"\s*\/?>(?:<\/include>)?/gi;
 const processNestedHtml = (content, loaderContext, dir = null) =>
@@ -81,11 +80,7 @@ module.exports = {
   },
   plugins: [
     ...generateHTMLPlugins(),
-    // new MangleCssClassPlugin({
-    //   classNameRegExp:
-    //     "(([a-zA-Z-:]*)[\\\\\\\\]*:)*([\\\\\\\\]*!)?ud-[a-zA-Z-]([a-zA-Z0-9-]*([\\\\\\\\]*(\\%|\\#|\\.|\\[|\\]))*)*",
-    //   log: true,
-    // }),
+
     new MiniCssExtractPlugin({
       filename: "style.css",
       chunkFilename: "style.css",
