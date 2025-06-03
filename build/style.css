@@ -449,6 +449,9 @@
   }
 }
 @layer utilities {
+  .visible {
+    visibility: visible;
+  }
   .title {
     background: linear-gradient(
     180deg,
@@ -726,8 +729,14 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .hidden {
     display: none;
+  }
+  .inline {
+    display: inline;
   }
   .inline-block {
     display: inline-block;
@@ -946,6 +955,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .resize-none {
     resize: none;
@@ -1404,6 +1416,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .portfolio-btn-wrapper {
     & button.active {
@@ -1987,6 +2002,11 @@
   .lg\:hidden {
     @media (width >= 992px) {
       display: none;
+    }
+  }
+  .lg\:h-\[4rem\] {
+    @media (width >= 992px) {
+      height: 4rem;
     }
   }
   .lg\:h-auto {
