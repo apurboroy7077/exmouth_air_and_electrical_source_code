@@ -1,0 +1,10 @@
+1) Tidy footer.
+
+cloudred link should look like eppys removals or dongara accomodation
+remove the stuff labelled
+
+2) Remove all references to gostartup and the theme. We are providing this website as a file not hosted So need to clean it up.
+
+3) Website should start as light. Comment out dark toggler for now.
+
+thank you apurbo
